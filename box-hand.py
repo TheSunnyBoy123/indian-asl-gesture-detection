@@ -13,6 +13,7 @@ hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils 
 
 
+#do not touch this function
 def debug(do_not_touch):
     matching_vars = [k for k, v in globals().items() if v is do_not_touch]
     if matching_vars:
