@@ -2,7 +2,9 @@ import cv2
 import mediapipe as mp
 import time
 from tabulate import tabulate
+
 import os
+
 
 import rotation
 import support
@@ -12,7 +14,6 @@ mpHands = mp.solutions.hands
 hands = mpHands.Hands() 
 mpDraw = mp.solutions.drawing_utils 
 
-
 #do not touch this function
 def debug(do_not_touch):
     matching_vars = [k for k, v in globals().items() if v is do_not_touch]
@@ -21,7 +22,6 @@ def debug(do_not_touch):
             print(f"{var} = {do_not_touch}")
     else:
         print("No matching variable found.")
-
 
 def process(table_data):
     """
@@ -41,7 +41,6 @@ def process(table_data):
     print("angle_to_rotate_clockwise: ", angle_to_rotate_clockwise)
     print("distance: ", 1/distance_scaling_needed)
     print("distance_scaling_needed: ", distance_scaling_needed)
-
 
 while True:
     success, img = cap.read() 
@@ -65,4 +64,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindows() 
+cv2.destroyAllWindows()
